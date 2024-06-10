@@ -54,6 +54,10 @@ Wireguard is a modern Virtual Private Network (VPN) which facilitates secure
 connections between machines on different networks. Download and install the 
 appropriate version of Wireguard for your machine from their [installation page](https://www.wireguard.com/install/).
 
+![Main Wireguard Interface](fig1_wg_interface.png "Figure 1")
+
+*Figure 1: Main Wireguard Interface*
+
 #### Configuration
 1. Click the down arrow next to the "Add Tunnel" option in the lower left corner (circled in red in Figure 1) and choose "Add empty tunnel..."
 2. In the box that pops up (Figure 2), give the tunnel a name (e.g., TRAC, in the orange box)
@@ -71,6 +75,10 @@ appropriate version of Wireguard for your machine from their [installation page]
 6. Update the IP address (Figure 2 red box) to the address you get from Ryan
 7. Click Save
 8. Click the "Activate" button to connect to the VPN
+
+![Wireguard Configuration Window](fig2_wg_config.png "Figure 2")
+
+*Figure 2: Wireguard Configuration Window*
 
 If you cannot connect or have any other issue, please contact [Ryan Avery](mailto:rpavery@uw.edu).
 
