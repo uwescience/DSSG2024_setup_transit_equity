@@ -15,8 +15,9 @@ users should install the windows version, it works fine with WSL).
 
 PostgreSQL is an excellent open source SQL database, which is used to store the
 ORCA data you will be using. Follow the install directions [here](https://postgresapp.com). 
-If you're on windows, install the Linux version in WSL. Be sure to install the
-command line tools (step 3) which are marked as optional.
+If you're on windows, install the Linux version in WSL - we recommend version 16.2 to use
+the same version as the main database. Be sure to install the command line tools (step 3) 
+which are marked as optional.
 
 ## Install and setup Mamba
 
@@ -53,10 +54,28 @@ Wireguard is a modern Virtual Private Network (VPN) which facilitates secure
 connections between machines on different networks. Download and install the 
 appropriate version of Wireguard for your machine from their [installation page](https://www.wireguard.com/install/).
 
-TODO: Ryan please add more details here
+#### Configuration
+1. Click the down arrow next to the "Add Tunnel" option in the lower left corner (circled in red in Figure 1) and choose "Add empty tunnel..."
+2. In the box that pops up (Figure 2), give the tunnel a name (e.g., TRAC, in the orange box)
+3. Copy the contents of the Public Key (Figure 2 green box) and email it to rpavery@uw.edu
+4. Paste the VPN Details text below to the area under your PrivateKey (Figure 2 blue box)
 
-## Install DBeaver
+        Address = 172.30.1.200/32
+        DNS = 10.142.198.89
+        
+        [Peer]
+        PublicKey = Da85zJucBXf4HyyMqMdLzCw9cvXDIiJ2k/fQM4aauns=
+        AllowedIPs = 172.30.0.0/24,10.142.198.0/24
+        Endpoint = 69.91.222.34:19683
+        PersistentKeepalive = 25
+6. Update the IP address (Figure 2 red box) to the address you get from Ryan
+7. Click Save
+8. Click the "Activate" button to connect to the VPN
 
-TODO: do we want to have them do this right away or not?
+If you cannot connect or have any other issue, please contact [Ryan Avery](mailto:rpavery@uw.edu).
 
-Download and install the DBeaver Community version from [here](https://dbeaver.io).
+## (Optional) Install DBeaver
+
+Download and install the DBeaver Community version from [here](https://dbeaver.io). While not
+necessary, doing so can be helpful for exploring the database structure and viewing
+relationships between tables.
