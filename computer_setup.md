@@ -82,6 +82,39 @@ appropriate version of Wireguard for your machine from their [installation page]
 
 If you cannot connect or have any other issue, please contact [Ryan Avery](mailto:rpavery@uw.edu).
 
+## Database Credentials & Configuring PgCLI
+
+Each of you will be given credentials to connect to the ORCA database. Your password will be 
+provided directly in Slack as a private message. Many PostgreSQL clients support the 
+[.pgpass file](https://www.postgresql.org/docs/current/libpq-pgpass.html) in your home 
+directory as a way to automatically provide your password when connecting to the database. Use the steps below to create this file:
+
+1. Create a file named `.pgpass` in your WSL home directory
+2. Edit this file and add the following lines. The first line is a comment showing the
+   syntax, and you should repace `<username>` and `<password>` with your credentials:
+
+        #hostname:port:database:username:password
+        10.142.198.170:5432:orca:<username>:<password>
+
+3. Save the file and exit the editor
+
+PgCLI is a python package which is part of the orca.yaml file in this documentation. 
+It is a command-line client that offers some features of IDEs like tab completion and 
+intelli-type for regcognizing columns and database objects. To use the client to 
+connect to a database, it is easiest to add shortcut entries, or Data Source Names (DSNs)
+to the pgcli config file located in your home directory at `~/.config/pgcli/config`.
+
+1. In WSL, use your favorite editor to edit ~/.config/pgcli/config
+2. Find the `[alias_dsn]` section near the bottom
+3. Underneath the example DSN, add the following config, replacing your `<username>` with your username:
+
+        # example_dsn = postgresql://[user[:password]@][netloc][:port][/dbname]
+        orca = postgresql://<username>@10.142.198.170:5432/orca
+
+4. Save the file and exit the editor
+5. Test if your connection works (ensure the Wireguard VPN is on) by entering the mamba
+   python environment and typing `pgcli -D orca`. If it works, you will have a SQL prompt. 
+
 ## (Optional) Install DBeaver
 
 Download and install the DBeaver Community version from [here](https://dbeaver.io). While not
