@@ -97,6 +97,7 @@ directory as a way to automatically provide your password when connecting to the
         10.142.198.170:5432:orca:<username>:<password>
 
 3. Save the file and exit the editor
+4. Edit the file to be readable only by you: `chmod 600 .pgpass`
 
 PgCLI is a python package which is part of the orca.yaml file in this documentation. 
 It is a command-line client that offers some features of IDEs like tab completion and 
@@ -104,15 +105,16 @@ intelli-type for regcognizing columns and database objects. To use the client to
 connect to a database, it is easiest to add shortcut entries, or Data Source Names (DSNs)
 to the pgcli config file located in your home directory at `~/.config/pgcli/config`.
 
-1. In WSL, use your favorite editor to edit ~/.config/pgcli/config
-2. Find the `[alias_dsn]` section near the bottom
-3. Underneath the example DSN, add the following config, replacing your `<username>` with your username:
+1. If you have not run pgcli before, type `pgcli` in a terminal window to create the configuration file
+2. In WSL, use your favorite editor to edit ~/.config/pgcli/config
+3. Find the `[alias_dsn]` section near the bottom
+4. Underneath the example DSN, add the following config, replacing your `<username>` with your username:
 
         # example_dsn = postgresql://[user[:password]@][netloc][:port][/dbname]
         orca = postgresql://<username>@10.142.198.170:5432/orca
 
-4. Save the file and exit the editor
-5. Test if your connection works (ensure the Wireguard VPN is on) by entering the mamba
+5. Save the file and exit the editor
+6. Test if your connection works (ensure the Wireguard VPN is on) by entering the mamba
    python environment and typing `pgcli -D orca`. If it works, you will have a SQL prompt. 
 
 ## (Optional) Install DBeaver
