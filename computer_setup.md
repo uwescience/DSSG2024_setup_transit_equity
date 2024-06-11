@@ -11,27 +11,20 @@ VSCode is a well designed modern code editor developed and supported by Microsof
 Follow the installation directions [here](https://code.visualstudio.com). (Windows
 users should install the windows version, it works fine with WSL).
 
-## Install PostgreSQL
-
-PostgreSQL is an excellent open source SQL database, which is used to store the
-ORCA data you will be using. Follow the install directions [here](https://postgresapp.com). 
-If you're on windows, install the Linux version in WSL - we recommend version 16.2 to use
-the same version as the main database. Be sure to install the command line tools (step 3) 
-which are marked as optional.
-
 ## Install and setup Mamba
 
 Mamba is a faster version of the Conda package and environment manager. We will
 use it to manage our python environments and packages.
-- If you do not already have a mamba/conda/anaconda installation, follow the installation directions for your system
-[here](https://github.com/conda-forge/miniforge). Windows users should install
-the Linux version in WSL.
+- If you do not already have a mamba/conda/anaconda installation, follow the
+installation directions for your system [here](https://github.com/conda-forge/miniforge).
+Windows users should install the Linux version in WSL.
     - When you run the install script, make sure you answer yes to letting it update
 your `.bashrc` or `.bash_profile`.
 - If you already have a conda or anaconda installation, you can replace `mamba`
 with `conda` in all of the following commands, it will just be a little slower.
-If you want it to be faster, you can follow the directions [here](https://www.anaconda.com/blog/a-faster-conda-for-a-growing-community) to install and use the faster
-mamba solver in your conda installation.
+If you want it to be faster, you can follow the directions
+[here](https://www.anaconda.com/blog/a-faster-conda-for-a-growing-community) to
+install and use the faster mamba solver in your conda installation.
 - Create a yaml file to define the mamba environment you will use for this project.
 You can start by copying [the example](orca.yaml) in this repo. I suggest storing
 this yaml in your own git repo so that you have a backup of the yaml, you can keep
@@ -48,18 +41,26 @@ it using `mamba create env -f <path_to_your_yaml>`.
 activate your most commonly used mamba environment.
 - Never install any packages in your base environment.
 
+## Install (or check an existing installation of) Sublime Merge or GitKraken
+
+Windows users should install this on the the Linux side.
+
+
 ## Install and set up Wireguard
 
 Wireguard is a modern Virtual Private Network (VPN) which facilitates secure 
 connections between machines on different networks. Download and install the 
-appropriate version of Wireguard for your machine from their [installation page](https://www.wireguard.com/install/).
+appropriate version of Wireguard for your machine from their
+[installation page](https://www.wireguard.com/install/) (Windows users should
+install the Windows version).
 
 ![Main Wireguard Interface](fig1_wg_interface.png "Figure 1")
 
 *Figure 1: Main Wireguard Interface*
 
 #### Configuration
-1. Click the down arrow next to the "Add Tunnel" option in the lower left corner (circled in red in Figure 1) and choose "Add empty tunnel..."
+1. Click the down arrow next to the "Add Tunnel" option in the lower left corner
+(circled in red in Figure 1) and choose "Add empty tunnel..."
 2. In the box that pops up (Figure 2), give the tunnel a name (e.g., TRAC, in the orange box)
 3. Copy the contents of the Public Key (Figure 2 green box) and email it to rpavery@uw.edu
 4. Paste the VPN Details text below to the area under your PrivateKey (Figure 2 blue box)
