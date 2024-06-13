@@ -29,14 +29,14 @@ install and use the faster mamba solver in your conda installation.
 You can start by copying [the example](orca.yaml) in this repo. I suggest storing
 this yaml in your own git repo so that you have a backup of the yaml, you can keep
 track of modifications and so you can replicate the environment on any machine.
-- Create the environment by running `mamba create env -f <path_to_your_yaml>`.
+- Create the environment by running `mamba env create -f <path_to_your_yaml>`.
 - If at any point you want to add or remove a package from your mamba environment,
-update the yaml and then run `mamba update env -f <path_to_your_yaml> --prune`.
+update the yaml and then run `mamba env update -f <path_to_your_yaml> --prune`.
 Note that you can add packages to be installed by pip to this yaml if needed as well. 
 Do not install any conda/mamba packages on the command line, always do it via the yaml.
 - If for any reason your mamba environment develops a problem, you can quickly
 and easily delete it using `mamba remove --name <your_env_name> --all` and remake
-it using `mamba create env -f <path_to_your_yaml>`.
+it using `mamba env create -f <path_to_your_yaml>`.
 - Optionally add a line to your `.bashrc` or `.bash_profile` to automatically
 activate your most commonly used mamba environment.
 - Never install any packages in your base environment.
