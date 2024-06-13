@@ -90,7 +90,7 @@ provided directly in Slack as a private message. Many PostgreSQL clients support
 [.pgpass file](https://www.postgresql.org/docs/current/libpq-pgpass.html) in your home 
 directory as a way to automatically provide your password when connecting to the database. Use the steps below to create this file:
 
-1. Create a file named `.pgpass` in your WSL home directory
+1. Create a file named `.pgpass` in your home directory (on Windows this should be your WSL home directory)
 2. Edit this file and add the following lines. The first line is a comment showing the
    syntax, and you should repace `<username>` and `<password>` with your credentials:
 
@@ -106,8 +106,8 @@ intelli-type for regcognizing columns and database objects. To use the client to
 connect to a database, it is easiest to add shortcut entries, or Data Source Names (DSNs)
 to the pgcli config file located in your home directory at `~/.config/pgcli/config`.
 
-1. If you have not run pgcli before, type `pgcli` in a terminal window to create the configuration file
-2. In WSL, use your favorite editor to edit ~/.config/pgcli/config
+1. If you have not run pgcli before, type `pgcli` in a terminal window to create the configuration file. Note: this will error, but it will create the file that you need to edit in the next step.
+2. Use your favorite editor to edit ~/.config/pgcli/config  (on Windows this should on WSL)
 3. Find the `[alias_dsn]` section near the bottom
 4. Underneath the example DSN, add the following config, replacing your `<username>` with your username:
 
