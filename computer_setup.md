@@ -92,7 +92,8 @@ directory as a way to automatically provide your password when connecting to the
 
 1. Create a file named `.pgpass` in your home directory (on Windows this should be your WSL home directory)
 2. Edit this file and add the following lines. The first line is a comment showing the
-   syntax, and you should repace `<username>` and `<password>` with your credentials:
+   syntax, and you should repace `<username>` and `<password>` with your credentials.
+   Make sure that you don't have leading spaces in any line or it will not work properly.
 
 ```
 #hostname:port:database:username:password
