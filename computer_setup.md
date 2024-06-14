@@ -94,8 +94,10 @@ directory as a way to automatically provide your password when connecting to the
 2. Edit this file and add the following lines. The first line is a comment showing the
    syntax, and you should repace `<username>` and `<password>` with your credentials:
 
-        #hostname:port:database:username:password
-        10.142.198.170:5432:orca:<username>:<password>
+```
+#hostname:port:database:username:password
+10.142.198.170:5432:orca:<username>:<password>
+```
 
 3. Save the file and exit the editor
 4. Edit the file to be readable only by you: `chmod 600 .pgpass`
@@ -111,8 +113,10 @@ to the pgcli config file located in your home directory at `~/.config/pgcli/conf
 3. Find the `[alias_dsn]` section near the bottom
 4. Underneath the example DSN, add the following config, replacing your `<username>` with your username:
 
-        # example_dsn = postgresql://[user[:password]@][netloc][:port][/dbname]
-        orca = postgresql://<username>@10.142.198.170:5432/orca
+```
+# example_dsn = postgresql://[user[:password]@][netloc][:port][/dbname]
+orca = postgresql://<username>@10.142.198.170:5432/orca
+```
 
 5. Save the file and exit the editor
 6. Test if your connection works (ensure the Wireguard VPN is on) by entering the mamba
